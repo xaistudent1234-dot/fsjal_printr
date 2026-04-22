@@ -22,6 +22,7 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 a {
@@ -492,6 +493,41 @@ blockquote strong {
         right: 10px;
         transform: scale(0.8);
     }
+}
+
+/* Side scattered images */
+.side-images {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.side-img {
+    position: absolute;
+    width: 130px;
+    height: auto;
+    border: 4px solid #fff;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.45);
+    cursor: pointer;
+    pointer-events: all;
+    transition: transform 0.15s, box-shadow 0.15s;
+    image-rendering: pixelated;
+}
+
+.side-img:hover {
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.5);
+    z-index: 100;
+    filter: brightness(1.05);
+    transform: scale(1.08) !important;
+}
+
+/* Only show side images on wide enough screens */
+@media (max-width: 1150px) {
+    .side-images { display: none; }
 }
 
 /* Gallery Grid */
